@@ -1,0 +1,31 @@
+.main {
+  text-align: center;
+}
+
+.content {
+  &__container {
+    overflow: hidden;
+    height: var(--container-height, 50px);
+
+    &__list {
+      animation-name: change;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+
+      &__item {
+        line-height: var(--container-height, 50px);
+        margin: 0;
+      }
+    }
+  }
+}
+
+@keyframes change {
+  0%, 60%, 100% {
+    transform: translate3d(0, 0, 0); // shows time
+  }
+  10%, 50% {
+    transform: translate3d(0, -50%, 0); // shows date
+  }
+}
